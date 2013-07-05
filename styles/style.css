@@ -1,0 +1,48 @@
+.retsly-js-phototile {
+  overflow: hidden;
+  display: none;
+}
+
+.retsly-js-phototile ul {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  text-indent: 0;
+}
+
+.retsly-js-phototile li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-indent: 0;
+  z-index: 0;
+  opacity: 0;
+  display: block;
+  position: absolute;
+  top: 0;
+}
+
+.retsly-js-phototile li:first {
+  position: relative;
+}
+
+.retsly-js-phototile li .retsly-js-phototile-overlay {
+  width: 100%;
+  position: absolute;
+}
+
+.retsly-js-phototile li img {
+  max-width: 800px !important;
+  width: 100%;
+}
+
+.retsly-js-phototile li .retsly-js-phototile-overlay h2 {
+  margin: 30px 30px;
+  color: #fff;
+  text-shadow: 1px 1px 1px #000;
+}
+.retsly-js-phototile li .retsly-js-phototile-overlay h3 {
+  margin: 10px 30px;
+  color: #fff;
+  text-shadow: 1px 1px 1px #000;
+}

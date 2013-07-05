@@ -12,6 +12,9 @@
     "index.js",
     "templates/template.js"
   ],
+  "templates": [
+    "templates/template.html"
+  ],
   "styles": [
     "styles/style.css"
   ]

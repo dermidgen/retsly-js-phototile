@@ -2,6 +2,7 @@
  * Retsly PhotoTile Component
  * Requires Retsly SDK (Full hosted SDK including _, $, BB)
  * TODO: Need to be able to pass in a listing model
+ * TODO: Need to make this layout responsive !!!
  */
 
 if(typeof Retsly !== 'undefined') {
@@ -11,6 +12,7 @@ if(typeof Retsly !== 'undefined') {
     var Component = {};
     Component.Basic = Backbone.View.extend({
       index: 0,
+      className: 'retsly-component retsly-js-phototile span12 row-fluid defer',
       initialize: function(options) {
 
         if(!options || typeof options.mls_id === "undefined")
@@ -40,24 +42,26 @@ if(typeof Retsly !== 'undefined') {
         this.$el.html( template( listing.toJSON() ));
 
         var self = this;
-        this.$el.find('li:first img').on('load', function() {
+        this.$el.find('li:first')
+          .css({ 'position': 'relative'})
+          .find('img').on('load', function() {
 
-          $([ self.$el, self.$el.find('ul').get(0) ])
-            .css({
-              'width': self.$el.find('li:first').width()+'px',
-              'height': self.$el.find('li:first').height()+'px'
-            });
+            self.$el.find('li:first').animate({ 'opacity': 1 });
+            self.$el.find('img')
+              .css('width', self.$el.width()+'px');
 
-          self.$el.find('li:first').animate({ 'opacity': 1 });
-
-          setTimeout(function() {
-            setInterval(function() {
-              self.cycle.apply(self);
-            }, 5000);
-          }, 5000);
+            setTimeout(function() {
+              setInterval(function() {
+                self.cycle.apply(self);
+              }, 5000);
+            }, 0);
 
         });
 
+        $(window).on('resize', function() {
+          self.$el.find('img')
+            .css('width', self.$el.width()+'px');
+        });
       },
       cycle: function() {
 
@@ -67,10 +71,11 @@ if(typeof Retsly !== 'undefined') {
         this.index = (this.index < photos.length-1 || !this.index) ? this.index+1 : 0;
 
         var pin = photos.get(this.index);
-        $(pin).css({ 'z-index': 1 }).animate({ 'opacity': 1 });
+        $(pin).css({ 'z-index': 1}).animate({ 'opacity': 1 });
 
         // Don't run the cross fade on first load.
         if(this.$el.hasClass('defer')) return this.$el.removeClass('defer');
+
         var pout = photos.get(this.last_index);
         $(pout).css({ 'z-index': 0 }).animate({'opacity': 0});
 

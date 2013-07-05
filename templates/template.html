@@ -1,15 +1,13 @@
-<div class='retsly-component retsly-js-virtualtour defer'>
-  <ul>
-    <% _.each(Photos.models, function(photo, index) { %>
-      <li>
-        <% if(index === 0) { %>
-          <div class='retsly-js-virtualtour-overlay'>
-            <h2><%- StreetNumber %> <%- StreetName %> <%- County %></h2>
-            <h3>$ <%- ListingPrice %> - <%- NumberOfBedrooms %> Bed, <%- NumberOfBaths %> Bath</h3>
-          </div>
-        <% } %>
-        <img src='<%- photo.get('Location') %>' />
-      </li>
-    <% }); %>
-  </ul>
-</div>
+<ul>
+  <% _.each(Photos.models, function(photo, index) { %>
+    <li class='span12'>
+      <% if(index === 0) { %>
+        <div class='retsly-js-phototile-overlay'>
+          <h2><%- StreetNumber %> <%- StreetName %> <%- County %></h2>
+          <h3>$ <%- ListingPrice %> - <%- NumberOfBedrooms %> Bed, <%- NumberOfBaths %> Bath</h3>
+        </div>
+      <% } %>
+      <img src='<%- photo.get('Location') %>' />
+    </li>
+  <% }); %>
+</ul>
