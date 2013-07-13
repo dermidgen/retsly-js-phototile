@@ -19,6 +19,7 @@
   display: block;
   position: absolute;
   top: 0;
+  margin: 0px !important;
 }
 
 .retsly-js-phototile li:first {
