@@ -1,5 +1,6 @@
 .retsly-js-phototile {
   overflow: hidden;
+  margin: 0 !important;
 }
 
 .retsly-js-phototile ul {
