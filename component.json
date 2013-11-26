@@ -6,9 +6,11 @@
   "dependencies": {
     "components/jquery": "1.10.2",
     "jashkenas/backbone": "*",
-    "jashkenas/underscore": "*",
-    "retsly/retsly-js-backbone": "*"
+    "jashkenas/underscore": "*"
   },
+  "local": [
+    "retsly-js-backbone"
+  ],
   "license": "MIT",
   "main": "index.js",
   "scripts": [
