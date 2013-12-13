@@ -1,13 +1,13 @@
 <ul>
-  <% _.each(Photos, function(photo, index) { %>
+  <% _.each(photos, function(photo, index) { %>
     <li class='span12'>
       <% if(index === 0) { %>
         <div class='retsly-js-phototile-overlay'>
-          <h2> <%- Address %> <%- County %></h2>
-          <h3>$ <%- ListingPrice %> - <%- NumberOfBedrooms %> Bed, <%- NumberOfBaths %> Bath</h3>
+          <h2> <%- address %> <%- county %></h2>
+          <h3>$ <%- listingPrice %> - <%- numberOfBedrooms %> Bed, <%- numberOfBaths %> Bath</h3>
         </div>
       <% } %>
-      <img src='<%- photo.Location %>' />
+      <img src='<%- photo.location %>' />
     </li>
   <% }); %>
 </ul>
