@@ -21,24 +21,24 @@ Component.Basic = Backbone.View.extend({
   className: 'retsly-component retsly-js-phototile span12 row-fluid defer',
   initialize: function(options) {
 
-    if(!options || typeof options.vendor_id === "undefined")
-      throw new Error('Retsly.Views.PhotoTile requires a vendor_id: `{vendor_id: \'id\'}`');
+    if(!options || typeof options.vendorID === "undefined")
+      throw new Error('Retsly.Views.PhotoTile requires a vendorID: `{vendorID: \'id\'}`');
 
-    if(!options || typeof options.listing_id === "undefined")
-      throw new Error('Retsly.Views.PhotoTile requires a listing_id: `{listing_id: listing.id}`');
+    if(!options || typeof options.listingID === "undefined")
+      throw new Error('Retsly.Views.PhotoTile requires a listingID: `{listingID: listing.id}`');
 
     if(typeof options == "undefined" || !options.target)
       throw new Error('Retsly.Views.PhotoTile is a subview and must have a target: `{target:this}`');
 
-    this.options = _.extend({ vendor_id: null, listing_id: null }, options);
+    this.options = _.extend({ vendorID: null, listingID: null }, options);
     options.target = (typeof options.target.$el !== "undefined") ? options.target.$el : $(options.target)
 
     $(options.target).append(this.$el);
 
     var self = this;
     new Retsly.Models.Listing(
-      { _id: this.options.listing_id },
-      { vendor_id: this.options.vendor_id }
+      { _id: this.options.listingID },
+      { vendorID: this.options.vendorID }
     )
     .fetch({
       limit: 1,
