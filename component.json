@@ -7,7 +7,7 @@
     "components/jquery": "1.10.2",
     "jashkenas/backbone": "*",
     "jashkenas/underscore": "*",
-    "Retsly/retsly-js-backbone": "*"
+    "retsly/retsly-js-backbone": "*"
   },
   "local": [ ],
   "license": "MIT",
