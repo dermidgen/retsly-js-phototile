@@ -1,14 +1,21 @@
 
-build: components index.js retsly-js-phototile.css template.js
+build: clean components template
 	@component build --dev
-
-template.js: template.html
-	@component convert $<
 
 components: component.json
 	@component install --dev
 
-clean:
-	rm -fr build components template.js
+template:
+	@component convert templates/template.html
 
-.PHONY: clean
+dist: component.json template
+	component install
+	component build
+
+test: build
+	@mocha-phantomjs test/test.html
+
+clean:
+	rm -fr build components templates/template.js
+
+.PHONY: clean test

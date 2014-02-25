@@ -21,5 +21,9 @@
   ],
   "styles": [
     "styles/style.css"
-  ]
+  ],
+  "development": {
+    "timoxley/assert": "*",
+    "visionmedia/mocha": "1.14.0"
+  }
 }
