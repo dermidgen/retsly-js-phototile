@@ -1,15 +1,4 @@
-<pre>
-                          ,------.        ,--.       ,--.
-                          |  .--. ',---.,-'  '-.,---.|  ,--. ,--.
-                          |  '--'.| .-. '-.  .-(  .-'|  |\  '  /
-                          |  |\  \\   --. |  | .-'  `|  | \   '
-                          `--' '--'`----' `--' `----'`--.-'  /
-                            Make Real Estate Apps in    `---'
-                               Minutes Not Months
-
-</pre>
-
-# retsly-js-phototile
+# retsly-js-phototile [![wercker status](https://app.wercker.com/status/0453b8ffcba851296b324d77e31e8a9b/s/ "wercker status")](https://app.wercker.com/project/bykey/0453b8ffcba851296b324d77e31e8a9b)
 
   A photo tile component built on Retsly
 
