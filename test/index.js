@@ -28,7 +28,7 @@ test('cannot be instantiated without Retsly.create()', function() {
 
 test('can be instantiated after Retsly.create()', function(){
   assert.doesNotThrow(function() {
-    Retsly.create('xxx');
+    Retsly.create('xxx', 'xxx');
     new Photo.Basic({ client_id: 'xxx', vendorID: 'sandicor', listingID: 'xxx', target: { $el: '' } });
   })
 });

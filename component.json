@@ -2,7 +2,7 @@
   "name": "retsly-phototile",
   "repo": "Retsly/retsly-js-phototile",
   "description": "A photo tile component built on Retsly",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "dependencies": {
     "components/jquery": "1.10.2",
     "jashkenas/backbone": "*",
